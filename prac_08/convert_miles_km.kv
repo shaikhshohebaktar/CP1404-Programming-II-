@@ -1,0 +1,41 @@
+BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    # Top section
+    BoxLayout:
+        spacing: 10
+        size_hint_y: 0.4
+
+        TextInput:
+            id: input_miles
+            text: "0"
+            multiline: False
+            font_size: 32
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_x: 0.3
+
+            Button:
+                text: "Up"
+                on_press: app.handle_increment(1)
+
+            Button:
+                text: "Down"
+                on_press: app.handle_increment(-1)
+
+    # Convert button
+    Button:
+        text: "Convert"
+        size_hint_y: 0.3
+        on_press: app.handle_convert()
+
+    # Output label
+    Label:
+        text: app.output_km
+        color: (1, 1, 0, 1)   # yellow text
+        font_size: 40
+        size_hint_y: 0.3
